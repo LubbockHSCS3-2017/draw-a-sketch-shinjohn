@@ -65,19 +65,35 @@ public class Tablet extends JPanel implements KeyListener, Runnable
 		//add in code to move the x and y
 		//if the up arrow was pressed
 		   //take 1 away from y value
+		if(keys[2] == true)
+			y -= 1;
 
 		//if the down arrow was pressed
 		   //add 1 to the y value
+		if(keys[3] == true)
+			y += 1;
 
 		//if the left array was pressed
 		   //take 1 away from x valye
+		if(keys[0] == true)
+			x -= 1;
 
 		//if the right arrow was pressed
 		   //add 1 to the y value
+		if(keys[1] == true)
+			x += 1;
 
 		//if the space bar was pressed
 		   //reset x and y to the center
 		   //draw a black rectangle the size of the screen
+		if(keys[4] == true) 
+		{
+			x = DrawIt.WIDTH/2;
+			y = DrawIt.HEIGHT/2;
+			window.setColor(Color.black);
+			window.fillRect(0, 0, DrawIt.WIDTH, DrawIt.HEIGHT);
+		}
+			
 
       window.setColor( Color.WHITE );
 		window.fillRect(x, y, 2, 2);
